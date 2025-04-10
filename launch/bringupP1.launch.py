@@ -16,7 +16,7 @@ def generate_launch_description():
                 extra_arguments=[{"use_intra_process_comms": True}],
                 parameters=[{"mode": "P1"}]
             ),
-            ComposableNode(
+            ComposableNode( # ここにmisora2_dt_clientを入力
                 package="pseudo_dt_client",
                 plugin="pseudo_dt_component::PseudoDTClient",
                 name="pseudo_dt_client",
