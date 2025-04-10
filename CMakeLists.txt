@@ -17,7 +17,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 
 find_package(misora2_operation)
-find_package(pseudo_dt_client)
+find_package(misora2_dt_client)
 
 install(
   DIRECTORY launch

@@ -7,7 +7,7 @@ def generate_launch_description():
         name="misora_operator", 
         package="rclcpp_components",
         executable="component_container_mt",#マルチスレッドの場合component_container_mt,シングルはcomponent_container
-        namespace="",
+        namespace="P4",
         composable_node_descriptions=[
             ComposableNode(
                 package="misora2_operation",
@@ -16,10 +16,10 @@ def generate_launch_description():
                 extra_arguments=[{"use_intra_process_comms": True}],
                 parameters=[{"mode": "P4"}]
             ),
-            ComposableNode(# ここにmisora2_dt_clientを入力
-                package="pseudo_dt_client",
-                plugin="pseudo_dt_component::PseudoDTClient",
-                name="pseudo_dt_client",
+            ComposableNode( # ここにmisora2_dt_clientを入力
+                package="misora2_dt_client",
+                plugin="dt_client_component::DTClient",
+                name="dt_client",
                 extra_arguments=[{"use_intra_process_comms": True}],
                 parameters=[{"mode": "P4"}]
             )
