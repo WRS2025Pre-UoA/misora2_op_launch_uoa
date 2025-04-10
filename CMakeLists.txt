@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(misora2_launch)
+project(misora2_op_launch_uoa)
 
 # Default to C++17
 if(NOT CMAKE_C_STANDARD)
