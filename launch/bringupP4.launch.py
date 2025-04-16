@@ -14,7 +14,8 @@ def generate_launch_description():
                 plugin="component_operator_gui::MisoraGUI",
                 name="misora_gui",
                 extra_arguments=[{"use_intra_process_comms": True}],
-                parameters=[{"mode": "P4"}]
+                parameters=[{"mode": "P4"}],
+                remappings=[("raw_image" , "/arm_camera/realsense2_camera_node/color/image_raw")]
             ),
             ComposableNode( # ここにmisora2_dt_clientを入力
                 package="misora2_dt_client",
