@@ -4,7 +4,7 @@ from launch_ros.descriptions import ComposableNode
 
 def generate_launch_description():
     container = ComposableNodeContainer(
-        name="misora_uoa_part", 
+        name="misora_op_uoa_part", 
         package="rclcpp_components",
         executable="component_container_mt",#マルチスレッドの場合component_container_mt,シングルはcomponent_container
         namespace="P1",
