@@ -33,6 +33,7 @@ def generate_launch_description():
         executable='client_node.py',
         name='client',
         parameters=[{"host": ""},{"robot_id": ""},{"mission": "P6"}],
+        output='screen',
     )
     
     return LaunchDescription([
