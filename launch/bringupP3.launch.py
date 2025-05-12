@@ -15,7 +15,9 @@ def generate_launch_description():
                 name="misora_gui",
                 extra_arguments=[{"use_intra_process_comms": True}],
                 parameters=[{"mode": "P3"}],
-                remappings=[("raw_image" , "/arm_camera/realsense2_camera_node/color/image_raw")]
+                # remappings=[("raw_image" , "/arm_camera/realsense2_camera_node/color/image_raw")]
+                # remappings=[("raw_image" , "/camera/camera/color/image_raw")]#テスト用
+                remappings=[("raw_image" , "image_raw")]
             ),
             ComposableNode( # ここにmisora2_dt_clientを入力
                 package="misora2_dt_client",

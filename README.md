@@ -1,18 +1,15 @@
 # misora2_op_launch_uoa
-## プログラム内容
- - Misora2のオペレーターPCで立ち上げるlaunchファイル
- - 立ち上げるノード
-    - misora2_operation
-        - オペレーターPCのrqtで表示するGUI
-        - 各報告内容を保持する
-        - misora内部のmisora2_distribute_imageノードとやり取りを行う(連続処理の信号)
-    - misora2_dt_client
-        - 報告する内容の確認
-        - デジタルツインへ報告
+## 内容
+ - オペレーターPCで以下のノードを立ち上げる
+    - misora2_operation/operator_gui_node：GUI画面表示
+    - misora2_dt_client/client.py dt_client_node：デジタルツインへ送信
+ - ミッションごとにファイルを分けている bringupP[<font color="red">ミッション番号1~4,6</font>].launch.py
 
 ## 実行コード
 ~~~bash!
+git clone git@github.com:WRS2025Pre-UoA/misora2_op_launch_uoa.git
+cd [ワークスペース]
 colcon build
 source install/setup.bash
-ros2 launch misora2_op_launch_uoa bringupP<ミッション番号 ex 1,2,3,4,6>.launch.py
+ros2 launch misora2_op_launch_uoa bringupP<1~4,6>.launch.py
 ~~~
