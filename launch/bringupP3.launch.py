@@ -22,7 +22,7 @@ def generate_launch_description():
             ComposableNode( # ここにmisora2_dt_clientを入力
                 package="misora2_dt_client",
                 plugin="dt_client_component::DTClient",
-                name="dt_client",
+                name="confirmation_screen",
                 extra_arguments=[{"use_intra_process_comms": True}],
                 parameters=[{"mode": "P3"}]
             )
