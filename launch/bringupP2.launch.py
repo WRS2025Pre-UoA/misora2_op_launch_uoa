@@ -30,16 +30,25 @@ def generate_launch_description():
         output="screen",
     )
 
-    python_node = Node(
+    python_node_value = Node(
         package='misora2_dt_client',
-        executable='client_node.py',
-        name='client',
+        executable='client_node_value.py',
+        name='client_value',
         parameters=[{"host": ""},{"robot_id": ""},{"mission": "P2"}],
         output='screen',
     )
   
+    # 未実装　misoraの位置姿勢を送信するノード
+    # python_node_pos = Node(
+    #     package='misora2_dt_client',
+    #     executable='client_node_pos.py',
+    #     name='client_pos',
+    #     parameters=[{"host": ""},{"robot_id": ""},{"mission": "P2"}],
+    #     output='screen',
+    # )
     return LaunchDescription([
         container, 
-        python_node,
+        python_node_value,
+        # python_node_pos,
         # load_composable_nodes
     ])
