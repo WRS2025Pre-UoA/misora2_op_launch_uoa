@@ -19,13 +19,13 @@ def generate_launch_description():
                 # remappings=[("raw_image" , "/camera/camera/color/image_raw")]#テスト用
                 remappings=[("raw_image" , "image_raw")]
             ),
-            ComposableNode( # ここにmisora2_dt_clientを入力
-                package="misora2_dt_client",
-                plugin="dt_client_component::DTClient",
-                name="confirmation_screen",
-                extra_arguments=[{"use_intra_process_comms": True}],
-                parameters=[{"mode": "P3"}]
-            )
+            # ComposableNode( # ここにmisora2_dt_clientを入力
+            #     package="misora2_dt_client",
+            #     plugin="dt_client_component::DTClient",
+            #     name="confirmation_screen",
+            #     extra_arguments=[{"use_intra_process_comms": True}],
+            #     parameters=[{"mode": "P3"}]
+            # )
         ],
         output="screen",
     )
@@ -39,13 +39,13 @@ def generate_launch_description():
     )
 
     # 未実装　misoraの位置姿勢を送信するノード
-    # python_node_pos = Node(
-    #     package='misora2_dt_client',
-    #     executable='client_node_pos.py',
-    #     name='client_pos',
-    #     parameters=[{"host": ""},{"robot_id": ""},{"mission": "P3"}],
-    #     output='screen',
-    # )
+    python_node_pos = Node(
+        package='misora2_dt_client',
+        executable='client_node_pos.py',
+        name='client_pos',
+        parameters=[{"host": ""},{"robot_id": ""},{"mission": "P3"}],
+        output='screen',
+    )
 
     return LaunchDescription([
         container, 

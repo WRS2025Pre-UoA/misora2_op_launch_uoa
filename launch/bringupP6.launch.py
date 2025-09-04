@@ -39,17 +39,17 @@ def generate_launch_description():
     )
 
     # 未実装　misoraの位置姿勢を送信するノード
-    # python_node_pos = Node(
-    #     package='misora2_dt_client',
-    #     executable='client_node_pos.py',
-    #     name='client_pos',
-    #     parameters=[{"host": ""},{"robot_id": ""},{"mission": "P6"}],
-    #     output='screen',
-    # )
+    python_node_pos = Node(
+        package='misora2_dt_client',
+        executable='client_node_pos.py',
+        name='client_pos',
+        parameters=[{"host": ""},{"robot_id": ""},{"mission": "P6"}],
+        output='screen',
+    )
     
     return LaunchDescription([
         container, 
         python_node_value,
-        # python_node_pos,
+        python_node_pos,
         # load_composable_nodes
     ])
