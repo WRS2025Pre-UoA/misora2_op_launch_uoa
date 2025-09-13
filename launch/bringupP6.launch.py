@@ -15,9 +15,7 @@ def generate_launch_description():
                 name="misora_gui",
                 extra_arguments=[{"use_intra_process_comms": True}],
                 parameters=[{"mode": "P6"}],
-                # remappings=[("raw_image" , "/arm_camera/realsense2_camera_node/color/image_raw")]
-                # remappings=[("raw_image" , "/camera/camera/color/image_raw")]#テスト用
-                remappings=[("raw_image" , "image_raw")]
+                remappings=[("raw_image" , "/arm_color_thermal_camera/selected_image_raw/compressed")]
             ),
             ComposableNode( # ここにmisora2_dt_clientを入力
                 package="misora2_dt_client",
@@ -34,7 +32,7 @@ def generate_launch_description():
         package='misora2_dt_client',
         executable='client_node_value.py',
         name='client_value',
-        parameters=[{"host": ""},{"robot_id": ""},{"mission": "P6"}],
+        parameters=[{"host": "stg.rms-cloud.jp"},{"robot_id": "54"},{"mission": "P6"},{"mac_id": "8d55839e82f7"}],
         output='screen',
     )
 
@@ -43,7 +41,7 @@ def generate_launch_description():
         package='misora2_dt_client',
         executable='client_node_pos.py',
         name='client_pos',
-        parameters=[{"host": ""},{"robot_id": ""},{"mission": "P6"}],
+        parameters=[{"host": "stg.rms-cloud.jp"},{"robot_id": "54"},{"mission": "P6"},{"mac_id": "8d55839e82f7"}],
         output='screen',
     )
     
@@ -51,5 +49,4 @@ def generate_launch_description():
         container, 
         python_node_value,
         python_node_pos,
-        # load_composable_nodes
     ])
