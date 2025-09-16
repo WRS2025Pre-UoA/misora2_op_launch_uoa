@@ -17,13 +17,6 @@ def generate_launch_description():
                 parameters=[{"mode": "P6"}],
                 remappings=[("raw_image" , "/arm_color_thermal_camera/selected_image_raw/compressed")]
             ),
-            ComposableNode( # ここにmisora2_dt_clientを入力
-                package="misora2_dt_client",
-                plugin="dt_client_component::DTClient",
-                name="confirmation_screen",
-                extra_arguments=[{"use_intra_process_comms": True}],
-                parameters=[{"mode": "P6"}]
-            )
         ],
         output="screen",
     )
