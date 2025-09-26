@@ -15,8 +15,8 @@ def generate_launch_description():
                 name="misora_gui",
                 extra_arguments=[{"use_intra_process_comms": True}],
                 parameters=[{"mode": "P5"},
-                            {"target_frame_id", "tunnel_origin"},
-                            {"source_frame_id", "base_link"}],
+                            {"target_frame_id": "tunnel_origin"},
+                            {"source_frame_id": "base_link"}],
                 remappings=[("raw_image" , "/arm_color_thermal_camera/selected_image_raw/compressed")]
             ),
         ],
